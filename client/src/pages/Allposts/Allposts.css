@@ -1,0 +1,53 @@
+.blog-posts-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px; /* Adjust the gap size as needed */
+}
+
+.blog-post {
+  width: calc(33.33% - 20px); /* Set to 1/3 of the container minus spacing (adjust the spacing) */
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px; /* Add bottom margin to separate blog posts */
+}
+
+.blog-post-image {
+  width: 100%; /* Ensure the image fills its container */
+  max-height: 200px; /* Set a fixed maximum height for the image */
+  object-fit: cover; /* Crop or fit the image within its container */
+}
+
+/* Adjust spacing and dimensions as needed */
+
+  
+  /* Adjust spacing and dimensions as needed */
+  
+
+/* @media (max-width: 700px) {
+  .blog-posts-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .blog-post{
+    width: 100%;
+  }
+}   */
+
+
+@media (max-width: 768px) {
+  .blog-post {
+    width: calc(50% - 10px); /* Set to 1/2 of the container minus spacing */
+  }
+}
+
+/* Media query for screens smaller than 576px (most phones) */
+@media (max-width: 576px) {
+  .blog-post {
+    width: 100%; /* Set to full width of the container */
+  }
+  .blog-post-image {
+    max-height: 150px; /* Adjust the maximum image height */
+  }
+}

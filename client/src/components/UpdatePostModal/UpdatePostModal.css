@@ -1,0 +1,33 @@
+.modal-wrapper{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgba(189, 189, 189, 0.9);
+    z-index: 1000;
+ }
+ 
+ 
+ .modal-container{
+     top: 50%;
+     left: 50%;
+     transform: translate(-50% , -50%);
+     width: 50rem;
+     position: fixed;
+     padding: 3rem 3rem;
+     border-radius: 0.5rem;
+     background-color: #fff;
+     display: flex;
+     flex-direction: column;
+ }
+ 
+ @media (max-width: 600px) {
+     .modal-wrapper{
+         width: 100%;
+     }
+ .modal-container{
+     width: 100%;
+ }
+ 
+ }

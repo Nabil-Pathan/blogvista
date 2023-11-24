@@ -1,0 +1,26 @@
+.nav-toggle-mobile{
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .nav-toggle{
+        display: none;
+    }
+    .nav-toggle-mobile {
+        display: block;
+        position: absolute;
+        top: 1.5rem;
+        left: 12rem;
+        z-index: 1;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .nav-toggle-mobile {
+        display: block;
+        position: absolute;
+        top: 1.5rem;
+        left: 12rem;
+        z-index: 1;
+    }
+  }

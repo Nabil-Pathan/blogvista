@@ -1,0 +1,34 @@
+/* Button Container Style */
+.button-container {
+    display: flex; /* Display the buttons side by side */
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px; /* Add margin for vertical spacing if needed */
+  }
+  
+  /* Update Button Style */
+  .update-button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-right: 5px; /* Adjust margin for horizontal spacing */
+  }
+  
+  /* Delete Button Style */
+  .delete-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-left: 5px; /* Adjust margin for horizontal spacing */
+  }
+  

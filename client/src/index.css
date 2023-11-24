@@ -1,0 +1,31 @@
+*{
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+.light-theme {
+  background-color: #fff; /* Default background color for light theme */
+  color: #000; /* Default text color for light theme */
+}
+
+/* Define styles for dark theme */
+.dark-theme {
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  background-color: rgb(17 24 39 ); /* Default background color for dark theme */
+  color: #fff; /* Default text color for dark theme */
+}
