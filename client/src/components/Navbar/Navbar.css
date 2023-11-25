@@ -9,7 +9,7 @@
     .nav-toggle-mobile {
         display: block;
         position: absolute;
-        top: 1.5rem;
+        top: 1rem;
         left: 12rem;
         z-index: 1;
     }
@@ -19,7 +19,7 @@
     .nav-toggle-mobile {
         display: block;
         position: absolute;
-        top: 1.5rem;
+        top: 0.87rem;
         left: 12rem;
         z-index: 1;
     }

@@ -42,7 +42,7 @@ const Navbar = () => {
           
           <div
             onClick={() => setOpen(!open)}
-            className={`text-3xl absolute right-8 top-6 cursor-pointer md:hidden ${open ? "z-10" : ""} ${theme === "dark" ? "dark-theme" : ""}`}
+            className={`text-3xl absolute right-8  top-5 cursor-pointer md:hidden ${open ? "z-10" : ""} ${theme === "dark" ? "dark-theme" : ""}`}
           >
             <MenuIcon className={`h-6 w-6 ${theme === "dark" ? "dark-theme" : ""}`} />
           </div>
