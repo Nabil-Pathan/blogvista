@@ -86,8 +86,10 @@ const UserProfile = () => {
       ) : (
         userProfile && (
           <>
-            <h1 className={`text-4xl font-bold mb-4  ${theme === 'dark' ? 'dark-theme' : 'text-indigo-800'}`}>{userProfile.name}'s Profile</h1>
-            <img src={userProfile.pic} alt={userProfile.name} className="w-32 h-32 rounded-full mb-4 object-cover" />
+            <h1 className={`text-4xl font-bold mb-4  ${theme === 'dark' ? 'dark-theme' : 'text-teal-700'}`}>{userProfile.name}'s Profile</h1>
+            <img
+             src={`${userProfile.pic === "" ? "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg" : userProfile.pic}`} 
+             alt={userProfile.name} className="w-32 h-32 rounded-full mb-4 object-cover" />
             <p className={` mb-4 ${theme === 'dark' ? 'dark-theme' : 'text-gray-700'}`}>Email: {userProfile.email}</p>
 
             {/* Display user details */}
@@ -105,7 +107,7 @@ const UserProfile = () => {
             {/* Follow/Unfollow button */}
             {!isCurrentUserProfile && (
               <div className="mt-3">
-                <button onClick={handleFollowToggle} className={`${theme === 'dark' ? 'bg-teal-500 hover:bg-teal-400' : 'bg-indigo-700 text-white hover:bg-indigo-500'} px-5 py-3 rounded-md `}>
+                <button onClick={handleFollowToggle} className={`${theme === 'dark' ? 'bg-teal-500 hover:bg-teal-400' : 'bg-teal-700 text-white hover:bg-teal-500'} px-5 py-3 rounded-md `}>
                   {isFollowing ? 'Unfollow' : 'Follow'}
                 </button>
               </div>

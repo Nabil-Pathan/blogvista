@@ -8,6 +8,8 @@ import ThemeToggle  from "../ThemeToggle/ThemeToggle"
 import { useThemeContext } from '../../context/ThemeContext';
 import './Navbar.css'
 import { MenuIcon } from '@heroicons/react/outline'
+import { LightBulbIcon } from '@heroicons/react/solid';
+import { XIcon } from '@heroicons/react/solid';
 
 const Navbar = () => {
   const { user, setUser } = useUserContext();
@@ -28,8 +30,8 @@ const Navbar = () => {
       <div className={`shadow-xl w-full ${theme === 'dark' ? 'dark-theme' : ''}  ${open ? "bg-white" : ""} top-0 left-0`}>
         <div className={`${theme === 'dark' ? 'dark-theme' : ''} md:flex items-center justify-between py-4 md:px-10 px-7`}>
           <div className={`font-bold text-2xl cursor-pointer flex items-center  text-gray-800 ${theme === 'dark' ? 'dark-theme' : ''}`}>
-            <span className="text-3xl text-teal-500 mr-1 pt-2">
-              <ion-icon name="logo-slack"></ion-icon>
+            <span className="text-3xl text-teal-500 mr-1 ">
+            <LightBulbIcon className="w-8 h-8 text-teal-600" />
             </span>
             <Link to="/" className={`${theme === "dark" ? "dark-theme" : ""}`}>BlogVista</Link>  
 
@@ -44,7 +46,16 @@ const Navbar = () => {
             onClick={() => setOpen(!open)}
             className={`text-3xl absolute right-8  top-5 cursor-pointer md:hidden ${open ? "z-10" : ""} ${theme === "dark" ? "dark-theme" : ""}`}
           >
-            <MenuIcon className={`h-6 w-6 ${theme === "dark" ? "dark-theme" : ""}`} />
+            {
+              open ? (
+                <XIcon
+                className={`w-6 h-6 ${theme === "dark" ? "dark-theme" : ""} cursor-pointer `}
+              />
+           
+              ) : (
+                <MenuIcon className={`h-6 w-6 ${theme === "dark" ? "dark-theme" : ""}`} />
+              )
+            }
           </div>
 
           <ul

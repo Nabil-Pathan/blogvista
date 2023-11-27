@@ -7,8 +7,8 @@ const Comment = ({ user ,pic , content , userId }) => {
 
      const { theme } = useThemeContext()
     return(
-    <div className={`${theme === "dark" ? 'bg-gray-950 ' : ''} flex items-center mb-4 bg-white p-4 rounded-md shadow-md`}>
-    <img src={pic} alt={user} className="w-10 h-10 rounded-full mr-3" />
+    <div className={`${theme === "dark" ? 'bg-gray-950 ' : ''} flex items-center justif-center mb-4  p-4 rounded-md shadow-md`}>
+    <img src={`${pic === "" ? "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg" : pic}`} alt={user} className="w-10 h-10 rounded-full mr-3" />
     <div>
     <Link to={`/profile/${userId}`} className={`font-bold ${theme === 'dark' ? 'text-white' : 'text-indigo-800'}`}>
           {user}
