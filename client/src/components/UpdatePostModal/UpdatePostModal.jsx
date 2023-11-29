@@ -42,7 +42,7 @@ const UpdatePostModal = ({postId , setUpdateModal , title , content , onPostUpda
     <>
     <div className="text-black modal-wrapper">
   <div className="modal-container bg-white rounded-lg shadow-lg p-4">
-    <button className="absolute text-3xl top-2 right-2 p-2 rounded-md shadow-lg text-gray-400 bg-white hover:bg-gray-50 hover:text-gray-600" onClick={()=> setUpdateModal(false)}>
+    <button className="absolute text-3xl top-3 right-3 px-2 py-1 rounded-md  text-gray-800 bg-gray-300  bg-white hover:bg-gray-200 hover:text-gray-600" onClick={()=> setUpdateModal(false)}>
       X
     </button>
     <label className="text-xl font-bold mb-2">Title</label>
