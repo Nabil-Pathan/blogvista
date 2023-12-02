@@ -42,9 +42,6 @@ const UpdatePostModal = ({postId , setUpdateModal , title , content , onPostUpda
     <>
     <div className="text-black modal-wrapper">
   <div className="modal-container bg-white rounded-lg shadow-lg p-4">
-    <button className="absolute text-3xl top-3 right-3 px-2 py-1 rounded-md  text-gray-800 bg-gray-300  bg-white hover:bg-gray-200 hover:text-gray-600" onClick={()=> setUpdateModal(false)}>
-      X
-    </button>
     <label className="text-xl font-bold mb-2">Title</label>
     <input type="text" className="border border-gray-500 rounded-md px-3 py-2 mb-4" 
      value={newTitle}

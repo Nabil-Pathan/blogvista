@@ -181,25 +181,30 @@ export const searchAndSortBlogsController = async (req, res) => {
 
 
 export const getSingleBlogPostController = async (req, res) => {
-    const { id } = req.params
+    const { id } = req.params;
 
     try {
-        const blogPost = await BlogPost.findById({ _id: id }).populate({
-            path: 'comments',
-            populate: {
-                path: 'user',
-                select: 'name pic ', // Only select the 'name' field from the User model
-            },
-        });
+        const blogPost = await BlogPost.findById({ _id: id })
+            .populate('author', 'name pic') // Populate the 'author' field in BlogPost model
+            .populate({
+                path: 'comments',
+                populate: {
+                    path: 'user',
+                    select: 'name pic',
+                },
+            });
+
         if (!blogPost) {
-            return res.json({ success: false, message: "Cannot find the Post" }).status(404)
+            return res.status(404).json({ success: false, message: "Cannot find the Post" });
         }
-        return res.json({ success: true, blogPost }).status(200)
+
+        return res.status(200).json({ success: true, blogPost });
     } catch (error) {
-        return res.json({ success: false, message: "Something Went wrong in Singlepost controller", error: error.message }).status(500)
         console.log(error);
+        return res.status(500).json({ success: false, message: "Something went wrong in Singlepost controller", error: error.message });
     }
-}
+};
+
 
 
 export const addCommentController = async (req, res) => {

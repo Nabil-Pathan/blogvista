@@ -80,7 +80,7 @@ const UserProfile = () => {
   };
 
   return (
-    <div className={`min-h-screen flex flex-col items-center justify-center  p-4 ${theme === 'dark' ? 'dark-theme' : 'mt-16 bg-gray-100'}`}>
+    <div className={`min-h-screen flex flex-col items-center   p-4 ${theme === 'dark' ? 'dark-theme' : 'mt-10 bg-gray-100'}`}>
       {loading ? (
         <Loader />
       ) : (

@@ -39,13 +39,13 @@ const ProfilePage = () => {
   }, []);
 
   return (
-    <div className={` shadow-lg rounded-lg p-4  ${theme === 'dark' ? 'dark-theme mt-0 w-[100%]' : 'mt-1 bg-white'}`}>
+    <div className={` shadow-lg  p-4  ${theme === 'dark' ? 'dark-theme mt-0 w-[100%]' : 'mt-1 bg-white'}`}>
       <div className="text-center">
         {
           user.user.pic == "" ?
           (<img
             src="https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg"
-            className="w-24 h-24 border-2 border-indigo-600 rounded-full mx-auto"
+            className="border-2 border-indigo-600 rounded-full mx-auto"
           />) :  (
             <img
             src={user.user.pic}
