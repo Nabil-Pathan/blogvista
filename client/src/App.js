@@ -15,6 +15,8 @@ import { Toaster } from 'react-hot-toast';
 import CreateBlogPage from './pages/CreateBlogPage/CreateBlogPage';
 import SingleBlogPage from './pages/SingleBlogPage/SingleBlogPage';
 import UserProfile from './pages/UserProfile/UserProfile';
+import UserFollowers from './pages/UserFollowers/UserFollowers';
+import UserFollowing from './pages/UserFollowing/UserFollowing';
 
 function App() {
 
@@ -42,7 +44,8 @@ function App() {
         <Route path="/createblog" element={<PrivateRoute element={ <CreateBlogPage/>} />} />
         <Route path='/post/:id' element={<PrivateRoute element={<SingleBlogPage/>}/>}/>
         <Route path='/profile/:userId' element={<PrivateRoute element={<UserProfile/>}/>}/>
-
+        <Route path='/followers/:userId' element={<PrivateRoute element={<UserFollowers/>}/>}/>
+        <Route path='/following/:userId' element={<PrivateRoute element={<UserFollowing/>}/>}/>
       </Routes>
       <Footer />
     </div>

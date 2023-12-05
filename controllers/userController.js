@@ -115,3 +115,19 @@ export const getFollowerStatus = async (req, res) => {
         res.status(500).json({ success: false, message: 'Internal Server Error' });
     }
 }
+
+export const getFollowing = async (req,res,next)=>{
+    const { userId } = req.params
+    try {
+        const user = await User.findById(req.user._id).populate('following', 'name pic')
+
+        if (!user) {
+            return res.status(404).json({ success: false, message: 'User not found' });
+        }
+
+        return res.status(200).json({ success: true, following: user.following });
+    } catch (error) {
+        console.error(error.message);
+        return res.status(500).json({ success: false, message: 'Internal Server Error' });
+    }
+}
