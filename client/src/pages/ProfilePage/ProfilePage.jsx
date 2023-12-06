@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 const ProfilePage = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [ userProfile , setUserProfile] = useState({})
   const { user } = useUserContext();
 
   const { theme } = useThemeContext()
@@ -33,8 +34,23 @@ const ProfilePage = () => {
     }
   };
 
+  const fetchUserProfile = async ()=>{
+    try {
+      setLoading(true);
+      const config = {
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      };
+
+      const { data } = await axios.get(`/api/user/profile/${user.user._id}`,config)
+      setUserProfile(data.user)
+    } catch (error) {
+       console.log(error.message);
+    }
+  }
   useEffect(() => {
-    console.log(user);
+    fetchUserProfile()
     fetchPosts();
   }, []);
 
@@ -42,29 +58,29 @@ const ProfilePage = () => {
     <div className={` shadow-lg  p-4  ${theme === 'dark' ? 'dark-theme mt-0 w-[100%]' : 'mt-1 bg-white'}`}>
       <div className="text-center">
         {
-          user.user.pic == "" ?
+          userProfile.pic == "" ?
           (<img
             src="https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg"
             className="profile-pic border-2 border-indigo-600 rounded-full mx-auto"
           />) :  (
             <img
-            src={user.user.pic}
+            src={userProfile.pic}
             className=" profile-pic border-2 border-teal-700 rounded-full mx-auto"
           />
           )
         }
-        <h1 className={`${theme === 'dark' ? 'dark-theme' : '' } text-4xl font-semibold mt-2`}>{user.user.name}</h1>
-        <p className={`text-xl  ${theme === 'dark' ? 'dark-theme' : 'text-gray-800' } `}>{user.user.email}</p>
+        <h1 className={`${theme === 'dark' ? 'dark-theme' : '' } text-4xl font-semibold mt-2`}>{userProfile.name}</h1>
+        <p className={`text-xl  ${theme === 'dark' ? 'dark-theme' : 'text-gray-800' } `}>{userProfile.email}</p>
       </div>
 
       <div className={`flex space-x-4 items-center justify-center mt-4 ${theme === "dark" ? "dark-theme" : ""}`}>
               <Link to={`/followers/${user.user._id}`} >
                 <h2 className={`font-semibold text-xl ${theme === 'dark' ? 'dark-theme' : ''}`}>Followers</h2>
-                <p  className={`${theme === 'dark' ? 'dark-theme' : ''} text-xl`}>{user.user.followers.length}</p>
+                <p  className={`${theme === 'dark' ? 'dark-theme' : ''} text-xl`}>{userProfile.followers ? userProfile.followers.length : 0}</p>
               </Link>
               <Link to={`/following/${user.user._id}`}>
                 <h2 className={`font-semibold text-xl ${theme === 'dark' ? 'dark-theme' : ''}`}>Following</h2>
-                <p className={`${theme === 'dark' ? 'dark-theme' : ''} text-xl`}>{user.user.following.length}</p>
+                <p className={`${theme === 'dark' ? 'dark-theme' : ''} text-xl`}>{userProfile.following ? userProfile.following.length : 0}</p>
               </Link>
             </div>
             {

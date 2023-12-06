@@ -22,13 +22,13 @@ const FollowingListingItem = ({ name, pic, userId }) => {
 
       if(isFollowing){
         await axios.post(`/api/user/unfollow/${userId}`, null, config);
+        toast.success('Unfollowed successfully!');
       }
       else{
         await axios.post(`/api/user/follow/${userId}`, null, config);
         toast.success('Followed successfully!');
       }
       setIsFollowing(!isFollowing)
-      toast.success('Unfollowed successfully!');
     } catch (error) {
       console.log(error.message);
     }

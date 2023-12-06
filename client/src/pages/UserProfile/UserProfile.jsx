@@ -107,7 +107,7 @@ const UserProfile = () => {
             {/* Follow/Unfollow button */}
             {!isCurrentUserProfile && (
               <div className="mt-3">
-                <button onClick={handleFollowToggle} className={`${theme === 'dark' ? 'bg-teal-500 hover:bg-teal-400' : 'bg-teal-700 text-white hover:bg-teal-500'} px-5 py-3 rounded-md `}>
+                <button onClick={handleFollowToggle} className={`font-bold ${theme === 'dark' ? 'bg-teal-500 hover:bg-teal-400' : 'bg-teal-700 text-white hover:bg-teal-500'} px-5 py-3 rounded-md `}>
                   {isFollowing ? 'Unfollow' : 'Follow'}
                 </button>
               </div>
@@ -118,9 +118,9 @@ const UserProfile = () => {
               <div className="mt-5">
                 <div className="p-4 sm:p-6 lg:p-8 overflow-y-auto">
                   <div className="blog-posts-container">
-                    {userPosts.map((post, index) => (
+                    {userPosts.length  > 0 ? userPosts.map((post, index) => (
                       <BlogPost key={post._id} id={post._id} title={post.title} date={post.date} content={post.content} image={post.image} />
-                    ))}
+                    ))  : ( <h1 className="text-4xl font-bold">No Posts Yet</h1> )}
                   </div>
                 </div>
               </div>
