@@ -39,7 +39,7 @@ const ProfilePage = () => {
   }, []);
 
   return (
-    <div className={`h-screen shadow-lg  p-4  ${theme === 'dark' ? 'dark-theme mt-0 w-[100%]' : 'mt-1 bg-white'}`}>
+    <div className={` shadow-lg  p-4  ${theme === 'dark' ? 'dark-theme mt-0 w-[100%]' : 'mt-1 bg-white'}`}>
       <div className="text-center">
         {
           user.user.pic == "" ?
